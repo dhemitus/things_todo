@@ -23,6 +23,7 @@ class ApiService {
 
   void addTodo(Todo todo) {
     _list.add(todo);
+    print(_list);
   }
 
   void deleteTodo(String id) {
