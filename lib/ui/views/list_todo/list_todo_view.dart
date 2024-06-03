@@ -21,8 +21,22 @@ class ListTodoView extends StackedView<ListTodoViewModel> {
           ),
           onPressed: () => viewModel.nextToAdd()),
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+        child: viewModel.isBusy ?
+          const Center(child: CircularProgressIndicator(color: Colors.black,))
+        : ListView.builder(
+          itemCount: viewModel.data?.length,
+          itemBuilder: (BuildContext context, int index) {
+            final todo = viewModel.data?[index];
+            return Card(
+              child: ListTile(
+                title: Text(todo?.title ?? ''),
+                onTap: () => viewModel.nextToDetail(todo!),
+              ),
+            );
+          }
+        ),
       ),
     );
   }

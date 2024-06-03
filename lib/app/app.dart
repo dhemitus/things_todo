@@ -8,6 +8,7 @@ import 'package:things_todo/services/api_service.dart';
 import 'package:things_todo/ui/views/list_todo/list_todo_view.dart';
 import 'package:things_todo/ui/views/detail_todo/detail_todo_view.dart';
 import 'package:things_todo/ui/views/add_todo/add_todo_view.dart';
+import 'package:things_todo/ui/views/edit_todo/edit_todo_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -17,6 +18,7 @@ import 'package:things_todo/ui/views/add_todo/add_todo_view.dart';
     MaterialRoute(page: ListTodoView),
     MaterialRoute(page: DetailTodoView),
     MaterialRoute(page: AddTodoView),
+    MaterialRoute(page: EditTodoView),
 // @stacked-route
   ],
   dependencies: [

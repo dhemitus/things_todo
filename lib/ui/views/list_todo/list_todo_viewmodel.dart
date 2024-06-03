@@ -12,6 +12,10 @@ class ListTodoViewModel extends FutureViewModel<List<Todo>> {
   @override
   Future<List<Todo>> futureToRun() => _apiService.getTodos();
 
+  Future<void> nextToDetail(Todo todo) async {
+    await _navigationService.navigateToDetailTodoView(todo: todo);
+  }
+
   void nextToAdd() {
     _navigationService.navigateToAddTodoView();
   }

@@ -2,7 +2,10 @@ import 'dart:math';
 import 'package:things_todo/models/todo.dart';
 
 class ApiService {
-  List<Todo> _list = [];
+  List<Todo> _list = [
+    Todo(id: '2323', title: 'first', description: 'first thing todo'),
+    Todo(id: '232qwqw3', title: 'second', description: 'second thing todo')
+  ];
 
   String getId() {
     return String.fromCharCodes(
