@@ -12,6 +12,11 @@ class ListTodoViewModel extends FutureViewModel<List<Todo>> {
   @override
   Future<List<Todo>> futureToRun() => _apiService.getTodos();
 
+  Future<void> doneTodo(String id) async {
+    _apiService.toggleTodo(id);
+    initialise();
+  }
+
   Future<void> deleteTodo(String id) async {
     _apiService.deleteTodo(id);
     initialise();

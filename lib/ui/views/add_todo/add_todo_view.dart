@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
 import 'add_todo_viewmodel.dart';
 
+@FormView(fields: [
+  FormTextField(name: 'title'),
+  FormTextField(name: 'description')
+])
 class AddTodoView extends StackedView<AddTodoViewModel> {
   const AddTodoView({Key? key}) : super(key: key);
+
+  @override
+  void onViewModelReady(AddTodoViewModel viewModel) {
+      // TODO: implement onViewModelReady
+      super.onViewModelReady(viewModel);
+    }
 
   @override
   Widget builder(
@@ -14,7 +25,7 @@ class AddTodoView extends StackedView<AddTodoViewModel> {
   ) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('new thing todo'),
+        title: const Text('new thing todo'),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(

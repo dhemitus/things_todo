@@ -3,7 +3,7 @@ import 'package:things_todo/models/todo.dart';
 
 class ApiService {
   List<Todo> _list = [
-    Todo(id: '2323', title: 'first', description: 'first thing todo'),
+    Todo(id: '2323', title: 'first', description: 'first thing todo', complete: true),
     Todo(id: '232qwqw3', title: 'second', description: 'second thing todo')
   ];
 
