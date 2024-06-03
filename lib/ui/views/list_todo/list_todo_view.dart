@@ -14,12 +14,13 @@ class ListTodoView extends StackedView<ListTodoViewModel> {
   ) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.small(
-          backgroundColor: Colors.black,
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-          onPressed: () => viewModel.nextToAdd()),
+        backgroundColor: Colors.black,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        onPressed: () => viewModel.nextToAdd()
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
@@ -32,6 +33,10 @@ class ListTodoView extends StackedView<ListTodoViewModel> {
             return Card(
               child: ListTile(
                 title: Text(todo?.title ?? ''),
+                trailing: IconButton(
+                  onPressed: () => viewModel.deleteTodo(todo!.id), 
+                  icon: Icon(Icons.clear, color: Colors.black,)
+                ),
                 onTap: () => viewModel.nextToDetail(todo!),
               ),
             );
